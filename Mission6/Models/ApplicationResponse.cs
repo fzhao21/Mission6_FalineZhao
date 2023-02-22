@@ -11,9 +11,7 @@ namespace Mission6.Models
         // validation
         [Key]
         [Required]
-        public int ApplicationId { get; set; }
-        [Required]
-        public string Category { get; set; }
+        public int ApplicationId { get; set; } 
         [Required]
         public string Title { get; set; }
         [Required]
@@ -26,6 +24,11 @@ namespace Mission6.Models
         public string LentTo { get; set; }
         [StringLength(25)]
         public string Notes { get; set; }
+
+        //Build Foreign Key Relationship
+        [Required]
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
 
     }
 }
